@@ -50,7 +50,7 @@ public class EmpController {
  */
 
     @PostMapping
-    public Result add(@RequestBody Emp emp){
+    public Result add(@RequestBody Emp emp){//前端获取json数据对象
          log.info("新增员工：{}",emp);
          empService.add(emp);
          return Result.success();

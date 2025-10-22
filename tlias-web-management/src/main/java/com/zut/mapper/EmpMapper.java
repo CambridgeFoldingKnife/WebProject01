@@ -2,7 +2,9 @@ package com.zut.mapper;
 
 import com.zut.pojo.Emp;
 import com.zut.pojo.EmpQueryParam;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -25,5 +27,13 @@ public interface EmpMapper {
    */
     List<Emp> list(EmpQueryParam queryParam);
 
+//插入员工数据
+    //需要获取数据库自增的主键，并赋值给id
+    // useGeneratedKeys：需要主键
+    //keyProperty将插入后返回的主键封装到id属性中
+    @Options(useGeneratedKeys = true,keyProperty = "id")
+    @Insert("insert into emp(username,name,gender,phone,job,salary,image,entry_date,dept_id,create_time,update_time)value "+
+    "(#{username},#{name},#{gender},#{phone},#{job},#{salary},#{image},#{entryDate},#{deptId},#{createTime},#{updateTime})")
+    void insert(Emp emp);
 }
 

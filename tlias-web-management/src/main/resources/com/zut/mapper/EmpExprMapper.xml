@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--        循环拿到集合数据批量插入-->
+<!--foreach：
+        collection：集合
+        item：循环出来的元素
+        open：循环开始前 拼接sql片段
+       close：循环结束后 拼接sql片段
+       separator：每次循环的分隔符-->
+<mapper namespace="com.zut.mapper.EmpExprMapper">
+   <insert id="insertBatch">
+       insert into emp_expr (emp_id,begin,end,company,job)values
+ <foreach collection="exprList" item="expr" separator=",">
+      (#{expr.empId},#{expr.begin},#{expr.end},#{expr.company},#{expr.job})
+</foreach>
+   </insert>
+
+</mapper>
