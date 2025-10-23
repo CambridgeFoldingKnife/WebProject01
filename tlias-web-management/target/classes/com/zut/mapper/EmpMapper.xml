@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zut.mapper.EmpMapper">
+
+<!--  条件查询-->
+<!--    会根据条件是否成立，动态生成where关键字-->
+<!--    自动去除第一个条件的and或者or-->
+<select id="list" resultType="com.zut.pojo.Emp">
+    select emp.*,dept.name deptName from emp left join dept on emp.dept_id = dept.id
+   <where>
+        <if test="name !=null and name !='' ">
+            <!--  concat拼接字符串，这里不能直接写 '%#{name}%'，写在引号内的不会被识别为占位符-->
+            emp.name like concat('%',#{name},'%')
+        </if>
+      <if test="gender !=null">
+          and emp.gender=#{gender}
+      </if>
+      <if test="begin !=null and end != null ">
+          and emp.entry_date between #{begin} and #{end}
+      </if>
+   </where>
+    order by emp.update_time desc
+</select>
+
+</mapper>

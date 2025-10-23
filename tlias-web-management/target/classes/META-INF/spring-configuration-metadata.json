@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "aliyun.oss",
+      "type": "com.zut.util.AliyunOSSProperties",
+      "sourceType": "com.zut.util.AliyunOSSProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "aliyun.oss.bucket-name",
+      "type": "java.lang.String",
+      "sourceType": "com.zut.util.AliyunOSSProperties"
+    },
+    {
+      "name": "aliyun.oss.endpoint",
+      "type": "java.lang.String",
+      "sourceType": "com.zut.util.AliyunOSSProperties"
+    }
+  ],
+  "hints": []
+}
