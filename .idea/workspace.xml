@@ -4,8 +4,54 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2e93344-9a4e-440e-a9de-05f4d658ef13" name="更改" comment="文件上传操作练习--添加员工头像等">
+    <list default="true" id="f2e93344-9a4e-440e-a9de-05f4d658ef13" name="更改" comment="优化上传--上传至阿里云oss存储器中等">
+      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/util/AliyunOSSProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/controller/UploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/itheima/TliasWebManagementApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/itheima/controller/DeptController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/itheima/dao/DeptDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/itheima/dao/impl/DeptDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/itheima/pojo/Dept.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/itheima/pojo/Result.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/itheima/service/DeptService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/itheima/service/impl/DeptServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/itheima/service/impl/DeptServiceImpl2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/TliasWebManagementApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/controller/DeptController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/controller/EmpController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/controller/UploadController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/mapper/DeptMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/mapper/DeptMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/mapper/EmpExprMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/mapper/EmpExprMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/mapper/EmpLogMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/mapper/EmpMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/mapper/EmpMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/pojo/Dept.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/pojo/Emp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/pojo/EmpExpr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/pojo/EmpLog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/pojo/EmpQueryParam.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/pojo/PagBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/pojo/Result.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/service/DeptService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/service/EmpLogService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/service/EmpService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/service/impl/DeptServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/service/impl/EmpLogServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/service/impl/EmpServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/util/AliyunOSSUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/dept.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/logback.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/static/upload.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/test-classes/com/zut/Demo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/test-classes/com/zut/LogTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/test-classes/com/zut/TliasWebManagementApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,38 +98,38 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "21",
-    "last_opened_file_path": "D:/IDEA_Code/JavaWeb/maven/web-project01/tlias-web-management/src/main/java/com/zut/util",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.25766283",
-    "settings.editor.selected.configurable": "File.Encoding",
-    "spring.configuration.checksum": "07e2282db43846ff85987eb5302ded7b",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/IDEA_Code/JavaWeb/maven/web-project01/tlias-web-management/src/main/java/com/zut/util&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.25766283&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;07e2282db43846ff85987eb5302ded7b&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL 方言": [
-      "MySQL"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL 方言&quot;: [
+      &quot;MySQL&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IDEA_Code\JavaWeb\maven\web-project01\tlias-web-management\src\main\java\com\zut\util" />
@@ -227,6 +273,9 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringBootOptions">
+    <option name="showAdditionalConfigNotification" value="false" />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
       <changelist id="f2e93344-9a4e-440e-a9de-05f4d658ef13" name="更改" comment="" />
@@ -270,7 +319,8 @@
       <workItem from="1760925978628" duration="10252000" />
       <workItem from="1761132004618" duration="5062000" />
       <workItem from="1761185898037" duration="2158000" />
-      <workItem from="1761188174618" duration="2181000" />
+      <workItem from="1761188174618" duration="2380000" />
+      <workItem from="1761218957122" duration="3404000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交测试">
       <created>1760788864817</created>
@@ -307,7 +357,14 @@
       <option name="project" value="LOCAL" />
       <updated>1761190313789</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="优化上传--上传至阿里云oss存储器中等">
+      <created>1761190401014</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1761190401014</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

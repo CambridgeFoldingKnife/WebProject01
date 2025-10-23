@@ -1,8 +1,11 @@
 package com.zut.controller;
 
 import com.zut.pojo.Result;
+import com.zut.util.AliyunOSSProperties;
 import com.zut.util.AliyunOSSUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -15,8 +18,13 @@ import java.util.UUID;
 @Slf4j
 @RestController
 public class UploadController {
-    String endpoint = "https://oss-cn-beijing.aliyuncs.com";
-    String bucketName = "javaweb-proj01";
+  /*  @Value("${aliyun.oss.endpoint}")
+    private String endpoint ;
+    @Value("${aliyun.oss.bucketName}")
+    private String bucketName;*/
+    @Autowired
+    private AliyunOSSProperties ossProperties;
+
     //本地存储
    /* @PostMapping("/upload")
      public Result upload(String username, Integer age, MultipartFile file) throws Exception {
@@ -39,7 +47,7 @@ public class UploadController {
     public Result upload (MultipartFile file) throws Exception{
         log.info("文件上传，上传文件名：{}",file.getOriginalFilename());
         String exName = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
-        String url = AliyunOSSUtils.upload(endpoint, bucketName, file.getBytes(), exName);
+        String url = AliyunOSSUtils.upload(ossProperties.getEndpoint(), ossProperties.getBucketName(), file.getBytes(), exName);
         return Result.success(url);
 
     }
