@@ -5,10 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2e93344-9a4e-440e-a9de-05f4d658ef13" name="更改" comment="文件上传操作练习--添加员工头像等">
-      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/util/AliyunOSSUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/test/java/com/zut/Demo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/controller/UploadController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -274,7 +270,7 @@
       <workItem from="1760925978628" duration="10252000" />
       <workItem from="1761132004618" duration="5062000" />
       <workItem from="1761185898037" duration="2158000" />
-      <workItem from="1761188174618" duration="1823000" />
+      <workItem from="1761188174618" duration="2181000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交测试">
       <created>1760788864817</created>
@@ -297,7 +293,21 @@
       <option name="project" value="LOCAL" />
       <updated>1761138751784</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="文件上传操作练习--添加员工头像等">
+      <created>1761190232882</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1761190232882</updated>
+    </task>
+    <task id="LOCAL-00005" summary="文件上传操作练习--添加员工头像等">
+      <created>1761190313789</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1761190313789</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,7 +345,8 @@
     <MESSAGE value="第一次提交测试" />
     <MESSAGE value="多表插入操作--添加员工插入日志操作完成" />
     <MESSAGE value="文件上传操作练习--添加员工头像等" />
-    <option name="LAST_COMMIT_MESSAGE" value="文件上传操作练习--添加员工头像等" />
+    <MESSAGE value="优化上传--上传至阿里云oss存储器中等" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化上传--上传至阿里云oss存储器中等" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

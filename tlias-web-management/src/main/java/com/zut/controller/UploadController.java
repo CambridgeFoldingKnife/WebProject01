@@ -41,5 +41,6 @@ public class UploadController {
         String exName = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
         String url = AliyunOSSUtils.upload(endpoint, bucketName, file.getBytes(), exName);
         return Result.success(url);
+
     }
 }
