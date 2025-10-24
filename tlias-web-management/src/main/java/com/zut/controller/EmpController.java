@@ -6,11 +6,14 @@ import com.zut.pojo.PagBean;
 import com.zut.pojo.Result;
 import com.zut.service.EmpService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.List;
 
 @RestController
 @RequestMapping("/emps")
@@ -36,6 +39,7 @@ public class EmpController {
             return Result.success(pagBean);
 
     }*/
+//    分页查询员工列表
    @GetMapping()
     public Result page(EmpQueryParam queryParam) {
         //日志输出
@@ -54,6 +58,30 @@ public class EmpController {
          log.info("新增员工：{}",emp);
          empService.add(emp);
          return Result.success();
+    }
+
+/*    //删除员工  接收参数：id数组
+@DeleteMapping
+    public Result delete(Integer[] dis){
+        log.info("批量删除的id为：{}", Arrays.toString(dis));
+        return Result.success();
+    }*/
+
+
+//删除员工  接收参数：list集合
+    @DeleteMapping
+    public Result delete(@RequestParam List<Integer> ids){
+        log.info("批量删除的id为：{}",ids);
+        empService.delete(ids);
+        return Result.success();
+    }
+
+//    根据id查询所有员工信息--页面回显
+    @GetMapping("/{id}")
+    public Result getInfo(@PathVariable Integer id){
+        log.info("根据id查询回显，id={}",id);
+       Emp emp=  empService.getInfo(id);
+       return Result.success(emp);
     }
 
 }

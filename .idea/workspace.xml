@@ -4,54 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2e93344-9a4e-440e-a9de-05f4d658ef13" name="更改" comment="优化上传--上传至阿里云oss存储器中等">
-      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/util/AliyunOSSProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/resources/application.yml" afterDir="false" />
+    <list default="true" id="f2e93344-9a4e-440e-a9de-05f4d658ef13" name="更改" comment="优化上传--选择上传至阿里云oss存储器中；改为yml配置封装配置类使用configurationProperties注解">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/controller/UploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/itheima/TliasWebManagementApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/itheima/controller/DeptController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/itheima/dao/DeptDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/itheima/dao/impl/DeptDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/itheima/pojo/Dept.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/itheima/pojo/Result.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/itheima/service/DeptService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/itheima/service/impl/DeptServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/itheima/service/impl/DeptServiceImpl2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/TliasWebManagementApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/controller/DeptController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/controller/EmpController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/controller/UploadController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/mapper/DeptMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/mapper/DeptMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/mapper/EmpExprMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/mapper/EmpExprMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/mapper/EmpLogMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/mapper/EmpMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/mapper/EmpMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/pojo/Dept.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/pojo/Emp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/pojo/EmpExpr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/pojo/EmpLog.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/pojo/EmpQueryParam.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/pojo/PagBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/pojo/Result.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/service/DeptService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/service/EmpLogService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/service/EmpService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/service/impl/DeptServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/service/impl/EmpLogServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/service/impl/EmpServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/util/AliyunOSSUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/dept.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/logback.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/static/upload.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/test-classes/com/zut/Demo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/test-classes/com/zut/LogTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/test-classes/com/zut/TliasWebManagementApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/controller/EmpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/controller/EmpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/mapper/EmpExprMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/mapper/EmpExprMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/mapper/EmpMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/mapper/EmpMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/service/EmpService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/service/EmpService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/service/impl/EmpServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/service/impl/EmpServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/resources/com/zut/mapper/EmpExprMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/resources/com/zut/mapper/EmpExprMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/resources/com/zut/mapper/EmpMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/resources/com/zut/mapper/EmpMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/controller/EmpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/controller/EmpController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/mapper/EmpExprMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/mapper/EmpExprMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/mapper/EmpMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/mapper/EmpMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/service/impl/EmpServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/service/impl/EmpServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -320,7 +285,9 @@
       <workItem from="1761132004618" duration="5062000" />
       <workItem from="1761185898037" duration="2158000" />
       <workItem from="1761188174618" duration="2380000" />
-      <workItem from="1761218957122" duration="3404000" />
+      <workItem from="1761218957122" duration="4421000" />
+      <workItem from="1761294218320" duration="301000" />
+      <workItem from="1761295015911" duration="9354000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交测试">
       <created>1760788864817</created>
@@ -364,7 +331,21 @@
       <option name="project" value="LOCAL" />
       <updated>1761190401014</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="优化上传--选择上传至阿里云oss存储器中；改为yml配置封装配置类使用configurationProperties注解">
+      <created>1761222599133</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1761222599133</updated>
+    </task>
+    <task id="LOCAL-00008" summary="优化上传--选择上传至阿里云oss存储器中；改为yml配置封装配置类使用configurationProperties注解">
+      <created>1761222657456</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1761222657456</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,7 +384,8 @@
     <MESSAGE value="多表插入操作--添加员工插入日志操作完成" />
     <MESSAGE value="文件上传操作练习--添加员工头像等" />
     <MESSAGE value="优化上传--上传至阿里云oss存储器中等" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化上传--上传至阿里云oss存储器中等" />
+    <MESSAGE value="优化上传--选择上传至阿里云oss存储器中；改为yml配置封装配置类使用configurationProperties注解" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化上传--选择上传至阿里云oss存储器中；改为yml配置封装配置类使用configurationProperties注解" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -3,7 +3,6 @@ package com.zut.service.impl;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.zut.mapper.EmpExprMapper;
-import com.zut.mapper.EmpLogMapper;
 import com.zut.mapper.EmpMapper;
 import com.zut.pojo.*;
 import com.zut.service.EmpLogService;
@@ -78,5 +77,15 @@ public class EmpServiceImpl implements EmpService {
             empLogService.insertLog(empLog);
         }
     }
+   @Transactional
+    @Override
+    public void delete(List<Integer> ids) {
+        //1.批量删除员工基本信息
+        empMapper.deleteByIds(ids);
+    }
 
+    @Override
+    public Emp getInfo(Integer id) {
+        return empMapper.getById(id);
+    }
 }
