@@ -1,13 +1,12 @@
 package com.zut.mapper;
 
+import com.zut.pojo.Dept;
 import com.zut.pojo.Emp;
 import com.zut.pojo.EmpQueryParam;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface EmpMapper {
@@ -41,5 +40,16 @@ public interface EmpMapper {
 
     //根据id查询详细信息
     Emp getById(Integer id);
+    //根据id更新员工信息
+    void update(Emp emp);
+
+//    查询每个职位对应的人数
+    @MapKey("pos")//可以不写
+    public List<Map> getJobData();
+    @MapKey("name")
+    public List<Map> getGenderDataMaps();
+
+    //获取所有员工列表，添加班级时选择班主任
+    List<Emp> selectList();
 }
 

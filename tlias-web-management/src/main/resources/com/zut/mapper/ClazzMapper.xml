@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zut.mapper.ClazzMapper">
+    <select id="list" parameterType="com.zut.pojo.ClazzQueryParam" resultType="com.zut.pojo.Clazz">
+        select
+        clazz.id,
+        clazz.name,
+        clazz.room,
+        begin_date,
+        end_date,
+        master_id,
+        clazz.create_time,
+        clazz.update_time,
+        emp.name masterName,
+        <!-- 无需 CDATA，直接转义特殊字符 -->
+        CASE WHEN clazz.end_date &lt; CURDATE() THEN '已结课' ELSE '在读' END AS status
+        from clazz
+        left join emp on clazz.master_id = emp.id
+        <where>
+            <if test='name != null and name != ""'>
+                clazz.name like concat('%', #{name}, '%')
+            </if>
+            <if test="begin != null and end != null">
+                and clazz.begin_date between #{begin} and #{end}
+            </if>
+        </where>
+    </select>
+
+<!--    根据id删除班级-->
+    <delete id="deleteById">
+        delete from clazz where id = #{id};
+    </delete>
+<!--    新增班级-->
+    <insert id="insert" parameterType="com.zut.pojo.Clazz">
+        INSERT INTO clazz (name,room,begin_date,end_date,master_id,subject,create_time,update_time) VALUES (
+        #{name},
+        #{room},
+        #{beginDate},
+        #{endDate},
+        #{masterId},
+        #{subject},
+        #{createTime},
+        #{updateTime}
+        )
+    </insert>
+
+    <!-- 修改班级操作前的查询回显操作 -->
+    <select id="getById" resultType="com.zut.pojo.Clazz">
+        SELECT
+            id,
+            name,
+            room,
+            begin_date ,
+            end_date,
+            master_id ,
+            subject,
+            create_time ,
+            update_time
+        FROM clazz
+        WHERE id = #{id}
+    </select>
+<!--修改班级信息-->
+    <update id="update">
+        update clazz
+<set>
+    <if test="name !=null and name!='' ">name = #{name},</if>
+    <if test="room !=null and room!='' ">room = #{room},</if>
+    <if test="beginDate !=null ">begin_date = #{beginDate},</if>
+    <if test="endDate !=null ">end_date = #{endDate},</if>
+    <if test="masterId !=null ">master_id = #{masterId},</if>
+    <if test="subject !=null ">subject = #{subject},</if>
+    <if test="updateTime !=null ">update_time = #{updateTime},</if>
+</set>
+    where id = #{id}
+    </update>
+
+<!--    查询全部班级信息-->
+    <select id="getClazzList" resultType="com.zut.pojo.Clazz">
+        SELECT
+            id,
+            name,
+            room,
+            begin_date,
+            end_date,
+            master_id,
+            subject,
+            create_time,
+            update_time
+        FROM clazz
+    </select>
+</mapper>

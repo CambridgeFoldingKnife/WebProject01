@@ -13,7 +13,10 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 
 @Service
 public class EmpServiceImpl implements EmpService {
@@ -37,6 +40,7 @@ public class EmpServiceImpl implements EmpService {
         return new PagBean(total,rows);
     }*/
 
+//显示员工列表
     @Override
     public PagBean page(EmpQueryParam queryParam) {
         //1.设置分页参数 pageHelper
@@ -50,9 +54,42 @@ public class EmpServiceImpl implements EmpService {
         return new PagBean(p.getTotal(),p.getResult());
     }
 
-//    新增员工
-    @Transactional(rollbackFor = {Exception.class}) //事务管理spring注解
+
+    /*
+      查询员工列表用于新增班级时的班主任选择。
+      重名的班主任显示对应的员工id 用以区分
+     */
     @Override
+    public List<Emp> getEmpList() {
+        // 1. 查询所有员工（原始数据，包含id和name）
+        List<Emp> empList = empMapper.selectList();
+        if (empList == null || empList.isEmpty()) {
+            return empList; // 空列表直接返回
+        }
+        // 2. 统计每个姓名的出现次数，判断是否重名
+        Map<String, Integer> nameCountMap = new HashMap<>();
+        for (Emp emp : empList) {
+            String name = emp.getName();
+            // 统计每个姓名出现的次数（忽略null或空字符串，避免异常）
+            if (name != null && !name.trim().isEmpty()) {
+                nameCountMap.put(name, nameCountMap.getOrDefault(name, 0) + 1);
+            }
+        }
+        // 3. 对重名的员工，在姓名后拼接ID（格式：姓名(id)）
+        for (Emp emp : empList) {
+            String name = emp.getName();
+            // 仅处理非空姓名，且该姓名出现次数>1（即重名）的情况
+            if (name != null && !name.trim().isEmpty() && nameCountMap.getOrDefault(name, 0) > 1) {
+                // 拼接后的姓名：原姓名 + (id)
+                emp.setName(name + "(" + emp.getId() + ")");
+            }
+            // 不重名的员工，姓名保持不变
+        }
+        return empList;
+    }
+
+    //    新增员工
+    @Transactional(rollbackFor = {Exception.class}) //事务管理spring注解
     public void add(Emp emp){
     try{
             //1.empMapper员工基本信息
@@ -84,8 +121,36 @@ public class EmpServiceImpl implements EmpService {
         empMapper.deleteByIds(ids);
     }
 
+    //根据员工id 查询回显全部个人信息
     @Override
     public Emp getInfo(Integer id) {
         return empMapper.getById(id);
+    }
+
+
+//    修改员工信息
+    @Transactional
+    @Override
+    public void update(Emp emp) {
+        //1.修改员工基本信息
+        emp.setUpdateTime(LocalDateTime.now());
+        empMapper.update(emp);
+
+        //2.根据员工id删除工作经历信息
+        //只传递一个员工id
+         empExprMapper.deleteByEmpIds(Arrays.asList(emp.getId()));
+
+        //3。添加员工的工作经历信息
+        //如若新增员工工作经历信息，需要再此获得该员工id
+        List<EmpExpr> exprList = emp.getExprList();
+        //判断集合非空
+        if(!CollectionUtils.isEmpty(exprList)){
+            exprList.forEach(empExpr -> {
+                empExpr.setEmpId(emp.getId());
+            });
+            empExprMapper.insertBatch(exprList);
+        }
+
+
     }
 }

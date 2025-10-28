@@ -84,4 +84,18 @@ public class EmpController {
        return Result.success(emp);
     }
 
+    //修改员工
+    @PutMapping
+    public  Result update(@RequestBody Emp emp){
+        log.info("根据id修改员工{}",emp);
+        empService.update(emp);
+        return Result.success();
+    }
+
+@GetMapping("/list")
+    public Result getEmpList(){
+        List<Emp> empList = empService.getEmpList();
+        return Result.success(empList);
+}
+
 }

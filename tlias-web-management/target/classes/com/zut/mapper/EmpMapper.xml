@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.zut.mapper.EmpMapper">
-<!--    根据id集合删除员工基本信息-->
+<!--    根据id集合循环获取集合中的id 删除员工基本信息-->
     <delete id="deleteByIds">
         delete from emp where id in
 <foreach collection="ids" item="id" separator="," open="(" close=")">
@@ -33,6 +33,8 @@
     order by emp.update_time desc
 </select>
 
+
+
 <!--    手动封装resultMap-->
     <resultMap id="empResultMap" type="com.zut.pojo.Emp">
 <!--        主键用id标签-->
@@ -51,6 +53,7 @@
         <result column="dept_id" property="deptId"/>
         <result column="create_time" property="createTime"/>
         <result column="update_time" property="updateTime"/>
+
 <!--       集合封装-->
 <!--        ofType: one  of  type-->
         <collection property="exprList" ofType="com.zut.pojo.EmpExpr">
@@ -62,7 +65,7 @@
             <result column="ee_job" property="job"/>
        </collection>
     </resultMap>
-<!--    根据id查询员工详细信息 封装多个Emp对象，多段工作经历-->
+<!-- 更新前的信息回显操作   根据id查询员工详细信息 封装多个Emp对象，多段工作经历-->
     <select id="getById" resultMap="empResultMap">
         select
             e.*,
@@ -73,5 +76,55 @@
             ee.job ee_job
         from emp e left join emp_expr ee on e.id = ee.emp_id
         where e.id = #{id};
+    </select>
+
+<!--    根据id动态更新员工-->
+    <!-- 根据ID更新员工信息 -->
+    <update id="update">
+        update emp
+        <set>
+            <if test="username != null and username != ''">username = #{username},</if>
+            <if test="password != null and password != ''">password = #{password},</if>
+            <if test="name != null and name != ''">name = #{name},</if>
+            <if test="gender != null">gender = #{gender},</if>
+            <if test="phone != null and phone != ''">phone = #{phone},</if>
+            <if test="job != null">job = #{job},</if>
+            <if test="salary != null">salary = #{salary},</if>
+            <if test="image != null and image != ''">image = #{image},</if>
+            <if test="entryDate != null">entry_date = #{entryDate},</if>
+            <if test="deptId != null">dept_id = #{deptId},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </set>
+        where id = #{id}
+    </update>
+
+<!--     统计各职位的对应人数-->
+    <select id="getJobData" resultType="java.util.Map">
+        select
+            (case job when 1 then '班主任'
+                      when 2 then '讲师'
+                      when 3 then '学生主管'
+                      when 4 then '校研主管'
+                      when 5 then '咨询师'
+                      else '其他'end ) pos,
+            count(*) posCount
+        from emp group by job;
+    </select>
+
+    <select id="getGenderDataMaps" resultType="java.util.Map">
+        select
+            if(gender=1,'男性员工','女性员工') name,
+            count(*) value
+        from emp group by gender;
+    </select>
+
+<!--    查询所有班主任列表 用于添加班级时选择班主任-->
+    <!-- 查询所有的员工姓名及ID（仅返回id和name） -->
+<!--    如多重复已经在service逻辑层在name后拼接该员工id 用以区分-->
+    <select id="selectList" resultType="com.zut.pojo.Emp">
+        SELECT id,username,password,name,gender,image,job,salary,entry_date,dept_id,create_time,update_time
+        FROM emp
+        WHERE name IS NOT NULL AND name != ''  <!-- 过滤空姓名 -->
+        ORDER BY name  <!-- 按姓名排序，方便前端查看 -->
     </select>
 </mapper>
