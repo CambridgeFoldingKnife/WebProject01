@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zut.mapper.StudentMapper">
+<!--    查询学生列表，支持姓名 学历 班级随意组合查询-->
+    <select id="list" parameterType="com.zut.pojo.StudentQueryParam" resultType="com.zut.pojo.Student">
+        select
+            student. id,
+            student.name,
+            no,
+            gender,
+            phone,
+            id_card,
+            is_college,
+            address,
+            degree,
+            graduation_date,
+            clazz_id,
+            violation_count,
+            violation_score,
+            student.create_time,
+            student.update_time,
+            clazz.name clazzName
+        from student left join clazz on student.clazz_id = clazz.id
+        <where>
+            <!-- 1. 姓名模糊查询：name非空且非空字符串时生效 -->
+            <if test="name != null and name != ''">
+                and student.name like concat('%', #{name}, '%')
+            </if>
+            <!-- 2. 学历精确查询：degree非空时生效（匹配数据库中degree编码，如4=本科） -->
+            <if test="degree != null">
+                and student.degree = #{degree}
+            </if>
+            <!-- 3. 班级精确查询：clazzId非空时生效（匹配student表的clazz_id字段） -->
+            <if test="clazzId != null">
+                and student.clazz_id = #{clazzId}
+            </if>
+        </where>
+    </select>
+
+<!--    根据id集合循环拿到集合中的id 删除学生信息-->
+    <delete id="deleteByIds">
+        delete from student where id in
+<foreach collection="ids" item="id" separator="," open="(" close=")">
+    #{id}
+</foreach>
+    </delete>
+
+</mapper>

@@ -8,5 +8,6 @@
     <file url="file://$PROJECT_DIR$/tlias-web-management/src/main/resources/com/zut/mapper/DeptMapper.xml" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/tlias-web-management/src/main/resources/com/zut/mapper/EmpExprMapper.xml" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/tlias-web-management/src/main/resources/com/zut/mapper/EmpMapper.xml" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/tlias-web-management/src/main/resources/com/zut/mapper/StudentMapper.xml" dialect="MySQL" />
   </component>
 </project>
