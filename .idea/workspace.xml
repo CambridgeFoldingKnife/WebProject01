@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2e93344-9a4e-440e-a9de-05f4d658ef13" name="更改" comment="班级管理模块完成">
+    <list default="true" id="f2e93344-9a4e-440e-a9de-05f4d658ef13" name="更改" comment="学省管理查询学生列表操作、批量删除学生操作完成">
       <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/controller/StudentController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/mapper/StudentMapper.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/pojo/Student.java" afterDir="false" />
@@ -291,7 +291,7 @@
       <workItem from="1761564270013" duration="9153000" />
       <workItem from="1761614277590" duration="17887000" />
       <workItem from="1761637174104" duration="4542000" />
-      <workItem from="1761656552274" duration="4308000" />
+      <workItem from="1761656552274" duration="4754000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交测试">
       <created>1760788864817</created>
@@ -363,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1761637308553</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="学省管理查询学生列表操作、批量删除学生操作完成">
+      <created>1761661051857</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1761661051857</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -405,7 +412,8 @@
     <MESSAGE value="优化上传--选择上传至阿里云oss存储器中；改为yml配置封装配置类使用configurationProperties注解" />
     <MESSAGE value="员工修改操作的回显。多段经历的对象封装操作。" />
     <MESSAGE value="班级管理模块完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="班级管理模块完成" />
+    <MESSAGE value="学省管理查询学生列表操作、批量删除学生操作完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="学省管理查询学生列表操作、批量删除学生操作完成" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
