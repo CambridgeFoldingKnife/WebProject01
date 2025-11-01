@@ -5,15 +5,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2e93344-9a4e-440e-a9de-05f4d658ef13" name="更改" comment="学省管理查询学生列表操作、批量删除学生操作完成">
-      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/controller/StudentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/mapper/StudentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/pojo/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/pojo/StudentQueryParam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/service/StudentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/service/impl/StudentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/resources/com/zut/mapper/StudentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/controller/LogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/controller/SessionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/filter/DemoFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/filter/TokenFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/interceptor/DemoInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/interceptor/TokenInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/mapper/LogMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/pojo/Log.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/pojo/LoginInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/pojo/StuCountOption.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/service/LogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/service/impl/LogServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/util/JwtUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/resources/com/zut/mapper/LogMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/main/resources/static/api接口文档.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tlias-web-management/src/test/java/com/zut/JwtTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2b77947a-f5fd-4236-a9ea-0494f21c0007.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2b77947a-f5fd-4236-a9ea-0494f21c0007.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/TliasWebManagementApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/TliasWebManagementApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/controller/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/controller/ReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/controller/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/mapper/EmpMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/mapper/EmpMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/mapper/StudentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/mapper/StudentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/pojo/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/pojo/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/pojo/StudentQueryParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/pojo/StudentQueryParam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/service/EmpService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/service/EmpService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/service/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/service/ReportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/service/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/service/impl/EmpServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/service/impl/EmpServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/service/impl/ReportServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/service/impl/ReportServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/service/impl/StudentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/java/com/zut/service/impl/StudentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/src/main/resources/com/zut/mapper/StudentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/src/main/resources/com/zut/mapper/StudentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/TliasWebManagementApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/TliasWebManagementApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/mapper/EmpMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/mapper/EmpMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/pojo/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/pojo/Result.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/service/EmpService.class" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/service/EmpService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/service/impl/EmpServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/tlias-web-management/target/classes/com/zut/service/impl/EmpServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +83,9 @@
   <component name="MavenRunner">
     <option name="jreName" value="21" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="32xN9gLPtk7aUtE5B1lCPkS4qJC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -60,45 +95,45 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/IDEA_Code/JavaWeb/maven/web-project01/tlias-web-management/src/main/java/com/zut/pojo&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.25766283&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;07e2282db43846ff85987eb5302ded7b&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "21",
+    "last_opened_file_path": "D:/IDEA_Code/JavaWeb/maven/web-project01/tlias-web-management/src/main/java/com/zut/util",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.25766283",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "07e2282db43846ff85987eb5302ded7b",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ],
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL 方言&quot;: [
-      &quot;MySQL&quot;
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL 方言": [
+      "MySQL"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\IDEA_Code\JavaWeb\maven\web-project01\tlias-web-management\src\main\java\com\zut\pojo" />
       <recent name="D:\IDEA_Code\JavaWeb\maven\web-project01\tlias-web-management\src\main\java\com\zut\util" />
+      <recent name="D:\IDEA_Code\JavaWeb\maven\web-project01\tlias-web-management\src\main\java\com\zut\controller" />
       <recent name="D:\IDEA_Code\JavaWeb\maven\web-project01\tlias-web-management\src\main\resources\static" />
+      <recent name="D:\IDEA_Code\JavaWeb\maven\web-project01\tlias-web-management\src\main\java\com\zut\pojo" />
       <recent name="D:\IDEA_Code\JavaWeb\maven\web-project01\tlias-web-management\src\main\java\com\zut\service\impl" />
-      <recent name="D:\IDEA_Code\JavaWeb\maven\web-project01\tlias-web-management\src\main\java\com\zut\service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\IDEA_Code\JavaWeb\maven\web-project01\tlias-web-management\src\main\java\com\zut\pojo" />
@@ -133,8 +168,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JDBCTest01.testPreparedStatement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="jdbc-demo" />
+    <configuration name="JwtTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tlias-web-management" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.zut.*" />
@@ -142,8 +177,23 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.zut" />
-      <option name="MAIN_CLASS_NAME" value="com.zut.JDBCTest01" />
-      <option name="METHOD_NAME" value="testPreparedStatement(java.lang.String,java.lang.String)" />
+      <option name="MAIN_CLASS_NAME" value="com.zut.JwtTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JwtTest.testParseJwt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tlias-web-management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zut.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zut" />
+      <option name="MAIN_CLASS_NAME" value="com.zut.JwtTest" />
+      <option name="METHOD_NAME" value="testParseJwt" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -160,22 +210,6 @@
       <option name="PACKAGE_NAME" value="com.zut" />
       <option name="MAIN_CLASS_NAME" value="com.zut.LogTest" />
       <option name="METHOD_NAME" value="testLog" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SpringbootMybatisQuickstartApplicationTests.findAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="springboot-mybatis-quickstart" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.zut.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.zut" />
-      <option name="MAIN_CLASS_NAME" value="com.zut.SpringbootMybatisQuickstartApplicationTests" />
-      <option name="METHOD_NAME" value="findAll" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -227,15 +261,18 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.JwtTest.testParseJwt" />
+        <item itemvalue="JUnit.JwtTest" />
         <item itemvalue="应用程序.Demo" />
         <item itemvalue="JUnit.LogTest.testLog" />
         <item itemvalue="JUnit.SpringbootMybatisQuickstartApplicationTests.testFindAll" />
-        <item itemvalue="JUnit.SpringbootMybatisQuickstartApplicationTests.findAll" />
-        <item itemvalue="JUnit.JDBCTest01.testPreparedStatement" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringBeansView">
+    <option name="showImplicitBeans" value="false" />
+  </component>
   <component name="SpringBootOptions">
     <option name="showAdditionalConfigNotification" value="false" />
   </component>
@@ -291,7 +328,11 @@
       <workItem from="1761564270013" duration="9153000" />
       <workItem from="1761614277590" duration="17887000" />
       <workItem from="1761637174104" duration="4542000" />
-      <workItem from="1761656552274" duration="4754000" />
+      <workItem from="1761656552274" duration="4846000" />
+      <workItem from="1761726099667" duration="10796000" />
+      <workItem from="1761812232459" duration="4826000" />
+      <workItem from="1761900344276" duration="3709000" />
+      <workItem from="1761957469367" duration="16333000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交测试">
       <created>1760788864817</created>
@@ -370,7 +411,14 @@
       <option name="project" value="LOCAL" />
       <updated>1761661051857</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="学省管理查询学生列表操作、批量删除学生操作完成">
+      <created>1761661402134</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1761661402134</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

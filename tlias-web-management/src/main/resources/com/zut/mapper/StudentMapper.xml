@@ -39,12 +39,107 @@
         </where>
     </select>
 
-<!--    根据id集合循环拿到集合中的id 删除学生信息-->
+<!-- 批量删除 根据id集合循环拿到集合中的id 删除学生信息-->
     <delete id="deleteByIds">
         delete from student where id in
 <foreach collection="ids" item="id" separator="," open="(" close=")">
     #{id}
 </foreach>
     </delete>
+
+<!--    添加学员-->
+    <insert id="insert" parameterType="com.zut.pojo.Student">
+       insert into student (name, no, gender, phone, id_card, is_college, address, degree, graduation_date, clazz_id, create_time, update_time)
+values (#{name}, #{no}, #{gender}, #{phone}, #{idCard}, #{isCollege}, #{address}, #{degree}, #{graduationDate}, #{clazzId}, #{createTime}, #{updateTime})
+    </insert>
+<!--根据id查询学生信息 页面回显-->
+    <select id="getById" resultType="com.zut.pojo.Student">
+        select
+            id,
+            name,
+            no,
+            gender,
+            phone,
+            id_card,
+            is_college,
+            address,
+            degree,
+            graduation_date,
+            clazz_id,
+            violation_count,
+            violation_score,
+            create_time,
+            update_time
+        from student
+       where id = #{id}
+    </select>
+<!--    修改学生信息-->
+     <update id="update">
+         update student
+         <set>
+             <if test="name != null">name = #{name},</if>
+             <if test="no != null">no = #{no},</if>
+             <if test="gender != null">gender = #{gender},</if>
+             <if test="phone != null">phone = #{phone},</if>
+             <if test="idCard != null">id_card = #{idCard},</if>
+             <if test="isCollege != null">is_college = #{isCollege},</if>
+             <if test="address != null">address = #{address},</if>
+             <if test="graduationDate!=null">graduation_date = #{graduationDate},</if>
+             <if test="violationCount!=null">violation_count = #{violationCount},</if>
+             <if test="violationScore!=null">violation_score = #{violationScore},</if>
+              <if test="clazzId!=null">clazz_id = #{clazzId},</if>
+             <if test="updateTime!=null">update_time = #{updateTime},</if>
+         </set>
+             where id = #{id}
+     </update>
+<!--    扣分-->
+    <update id="Violation">
+        update student
+        <set>
+            violation_count = violation_count + 1,  <!-- 次数累加 -->
+            <if test="score != null">violation_score = violation_score + #{score}</if>  <!-- 分数累加 -->
+        </set>
+        where id = #{id}
+    </update>
+
+    <select id="countByDegree" resultType="java.util.Map">
+        SELECT
+            -- 通过CASE WHEN将ID转换为学历名称
+            CASE
+                WHEN degree = 1 THEN '初中'
+                WHEN degree = 2 THEN '高中'
+                WHEN degree = 3 THEN '大专'
+                WHEN degree = 4 THEN '本科'
+                WHEN degree = 5 THEN '硕士'
+                WHEN degree = 6 THEN '博士'
+                ELSE '其他'  -- 处理未匹配的ID（可选）
+                END AS name,
+            COUNT(*) AS value  -- 统计对应学历的人数
+        FROM
+            student
+        WHERE
+            degree IS NOT NULL  -- 排除空值
+          AND degree BETWEEN 1 AND 6  -- 只统计有效ID（可选，根据实际情况调整）
+        GROUP BY
+            degree  -- 按学历ID分组（因为ID唯一对应名称，分组结果等价于按名称分组）
+        ORDER BY
+            value DESC
+    </select>
+
+<!--统计各班级人数-->
+    <select id="getStuCountData" resultType="java.util.Map">
+        SELECT
+            clazz.name AS clazzName,
+            COUNT(*) AS stuCount
+        FROM
+            student
+        LEFT JOIN clazz ON student.clazz_id = clazz.id
+        WHERE
+            clazz.id IS NOT NULL
+        GROUP BY
+            clazz.id
+        ORDER BY
+            stuCount DESC
+    </select>
 
 </mapper>

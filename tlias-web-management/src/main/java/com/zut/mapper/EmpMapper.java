@@ -4,6 +4,7 @@ import com.zut.pojo.Dept;
 import com.zut.pojo.Emp;
 import com.zut.pojo.EmpQueryParam;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
@@ -51,5 +52,8 @@ public interface EmpMapper {
 
     //获取所有员工列表，添加班级时选择班主任
     List<Emp> selectList();
+
+    @Select("select * from emp where username = #{username} and password = #{password}")
+    Emp getByUsernameAndPassword(Emp emp);
 }
 

@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -37,5 +38,31 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public void delete(List<Integer> ids) {
         studentMapper.deleteByIds(ids);
+    }
+//    添加学生
+
+    @Override
+    public void add(Student student) {
+        student.setCreateTime(LocalDateTime.now());
+        student.setUpdateTime(LocalDateTime.now());
+        studentMapper.insert(student);
+    }
+//根据id查询学生信息页面回显
+    @Override
+    public Student getInfo(Integer id) {
+        Student student = studentMapper.getById(id);
+        return student;
+    }
+//修改学生信息
+    @Override
+    public void update(Student student) {
+        student.setUpdateTime(LocalDateTime.now());
+        studentMapper.update(student);
+    }
+    //学生扣分
+
+    @Override
+    public void updateViolation(Integer id, Integer score) {
+        studentMapper.Violation(id,score);
     }
 }

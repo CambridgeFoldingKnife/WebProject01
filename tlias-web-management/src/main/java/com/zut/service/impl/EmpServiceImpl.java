@@ -7,6 +7,7 @@ import com.zut.mapper.EmpMapper;
 import com.zut.pojo.*;
 import com.zut.service.EmpLogService;
 import com.zut.service.EmpService;
+import com.zut.util.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -152,5 +153,19 @@ public class EmpServiceImpl implements EmpService {
         }
 
 
+    }
+
+    @Override
+    public LoginInfo login(Emp emp) {
+        //1.根据前端输入的用户名密码查询员工表
+      Emp e = empMapper.getByUsernameAndPassword(emp);
+
+        //2.判断
+        //得到的员工信息不为空就返回一个新的登陆结果
+        if (e != null){
+            String jwt = JwtUtils.generateJwt(Map.of("id", e.getId(), "username", e.getUsername(), "name", e.getName()));
+            return new LoginInfo(e.getId(),e.getUsername(),e.getName(),jwt);
+        }//错误返回null
+        return null;
     }
 }

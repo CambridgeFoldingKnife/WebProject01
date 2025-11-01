@@ -4,7 +4,7 @@ import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
-
+//前端仅有姓名 班级 学历.其他字段后续可扩展
 @Data
 public class StudentQueryParam {
     // 分页参数（默认值）

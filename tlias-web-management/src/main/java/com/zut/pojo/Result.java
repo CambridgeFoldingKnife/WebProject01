@@ -23,7 +23,8 @@ public class Result {
 
     public static Result success(Object object) {
         Result result = new Result();
-        result.data = object;
+        // 关键：如果object为null，默认赋值为空对象（而非null）
+        result.data = object != null ? object : new Object();
         result.code = 1;
         result.msg = "success";
         return result;

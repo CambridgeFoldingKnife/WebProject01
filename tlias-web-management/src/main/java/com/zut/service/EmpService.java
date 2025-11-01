@@ -2,6 +2,7 @@ package com.zut.service;
 
 import com.zut.pojo.Emp;
 import com.zut.pojo.EmpQueryParam;
+import com.zut.pojo.LoginInfo;
 import com.zut.pojo.PagBean;
 
 import java.util.List;
@@ -18,4 +19,6 @@ public interface EmpService  {
     void update(Emp emp);
 //获取所有员工的姓名 在添加班级时选择对应班主任列表
     List<Emp> getEmpList();
+
+    LoginInfo login(Emp emp);
 }
