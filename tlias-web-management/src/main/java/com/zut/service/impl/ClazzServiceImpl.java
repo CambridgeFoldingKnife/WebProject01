@@ -29,6 +29,8 @@ public class ClazzServiceImpl implements ClazzService {
         return new PagBean(c.getTotal(),c.getResult());
     }
 
+
+
     @Override
     public void deleteById(Integer id) {
         clazzMapper.deleteById(id);

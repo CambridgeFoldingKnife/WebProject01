@@ -1,5 +1,6 @@
 package com.zut.controller;
 
+import com.zut.anno.Log;
 import com.zut.pojo.Emp;
 import com.zut.pojo.EmpQueryParam;
 import com.zut.pojo.PagBean;
@@ -52,7 +53,7 @@ public class EmpController {
 /*
  *  新增员工
  */
-
+    @Log
     @PostMapping
     public Result add(@RequestBody Emp emp){//前端获取json数据对象
          log.info("新增员工：{}",emp);
@@ -69,6 +70,7 @@ public class EmpController {
 
 
 //删除员工  接收参数：list集合
+    @Log
     @DeleteMapping
     public Result delete(@RequestParam List<Integer> ids){
         log.info("批量删除的id为：{}",ids);
@@ -85,6 +87,7 @@ public class EmpController {
     }
 
     //修改员工
+    @Log
     @PutMapping
     public  Result update(@RequestBody Emp emp){
         log.info("根据id修改员工{}",emp);

@@ -1,5 +1,6 @@
 package com.zut.controller;
 
+import com.zut.anno.Log;
 import com.zut.pojo.Dept;
 import com.zut.pojo.Result;
 import com.zut.service.DeptService;
@@ -89,6 +90,7 @@ public class DeptController {*/
     }*/
 
     //3.    2.的省略版  当前端传递参数名和方法形参一致
+        @Log
         @DeleteMapping()
         public Result delete( Integer id) {
             log.info("根据id删除部门： " + id);
@@ -99,12 +101,14 @@ public class DeptController {*/
         /*新增部门
           在controller中对象形式接受json参数
         */
+         @Log
          @PostMapping()
         public Result add(@RequestBody Dept dept){
              log.info("添加部门："+dept);
              deptService.add(dept);
             return Result.success();
          }
+
          //id 查询部门
          @GetMapping("/{id}")
          public Result getById(@PathVariable Integer id){
@@ -113,6 +117,7 @@ public class DeptController {*/
             return Result.success(dept);
          }
 //         修改部门  接受前端参数请求  json dept对象形式。
+         @Log
         @PutMapping()
          public Result update(@RequestBody Dept dept){
             log.info("修改部门："+dept);

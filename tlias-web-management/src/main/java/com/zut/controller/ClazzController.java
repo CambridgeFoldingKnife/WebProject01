@@ -1,5 +1,6 @@
 package com.zut.controller;
 
+import com.zut.anno.Log;
 import com.zut.pojo.Clazz;
 import com.zut.pojo.ClazzQueryParam;
 import com.zut.pojo.PagBean;
@@ -26,6 +27,7 @@ public class ClazzController {
         return Result.success(pagBean);
     }
 //根据班级id删除班级
+    @Log
     @DeleteMapping("/{id}")
     public Result delete(@PathVariable Integer id){
        log.info("以id删除部门：id={}",id);
@@ -33,6 +35,7 @@ public class ClazzController {
        return Result.success();
     }
 //新增员工 对象接收参数加注解requestBody
+    @Log
     @PostMapping
     public Result add(@RequestBody Clazz clazz){
         log.info("新增班级：{}",clazz);
@@ -49,6 +52,7 @@ public class ClazzController {
     }
 
 //更新班级信息
+    @Log
     @PutMapping
     public Result update(@RequestBody Clazz clazz){
         log.info("根据id修改班级{}",clazz);
